@@ -1,5 +1,3 @@
-import profileImg from '../assets/icons/profile.jpg';
-
 export default function About() {
   return (
     <section id="about" className="min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-white pt-20">
@@ -58,7 +56,7 @@ export default function About() {
                   <div className="w-full h-full bg-white rounded-xl p-4">
                     <div className="w-full h-full rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
                       <img 
-                        src={profileImg} 
+                        src="/profile.jpg"
                         alt="Drew Hockstein profile" 
                         className="object-cover w-full h-full rounded-lg" 
                       />
