@@ -1,13 +1,103 @@
+import { useState, useEffect } from 'react';
+
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
-    <header>
-      <h1>Drew Hockstein</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <a href="#" className="flex items-center">
+          <span className="text-2xl font-bold text-primary">Home</span>
+        </a>
+        
+        <nav className="hidden md:flex items-center space-x-1">
+          {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={e => handleNavClick(e, item.toLowerCase())}
+              className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-300"
+            >
+              {item}
+            </a>
+          ))}
+          <a 
+            href="/resume.pdf" 
+            className="ml-2 px-5 py-2 bg-primary hover:bg-secondary text-white font-medium text-sm rounded-md transition-colors duration-300 shadow-sm"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+        </nav>
+
+        <button onClick={toggleMobileMenu} className="md:hidden text-gray-700 focus:outline-none">
+          {mobileMenuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div 
+        className={`md:hidden absolute w-full bg-white shadow-md transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 invisible'
+        } overflow-hidden`}
+      >
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-col space-y-2">
+            {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={e => handleNavClick(e, item.toLowerCase())}
+                className="px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+            <div className="pt-2 mt-2 border-t border-gray-100">
+              <a 
+                href="/resume.pdf" 
+                className="block w-full text-center px-4 py-3 bg-primary hover:bg-secondary text-white font-medium rounded-md transition-colors"
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
