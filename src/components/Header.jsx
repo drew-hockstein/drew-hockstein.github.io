@@ -26,10 +26,10 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900 shadow-sm py-3' : 'bg-gray-900 py-5'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center">
-          <span className="text-2xl font-bold text-primary">Home</span>
+          <span className="text-2xl font-bold text-white">Home</span>
         </a>
         
         <nav className="hidden md:flex items-center space-x-1">
@@ -38,22 +38,14 @@ export default function Header() {
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={e => handleNavClick(e, item.toLowerCase())}
-              className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-300"
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
             >
               {item}
             </a>
           ))}
-          <a 
-            href="/resume.pdf" 
-            className="ml-2 px-5 py-2 bg-primary hover:bg-secondary text-white font-medium text-sm rounded-md transition-colors duration-300 shadow-sm"
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Resume
-          </a>
         </nav>
 
-        <button onClick={toggleMobileMenu} className="md:hidden text-gray-700 focus:outline-none">
+        <button onClick={toggleMobileMenu} className="md:hidden text-gray-300 hover:text-white focus:outline-none">
           {mobileMenuOpen ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -68,7 +60,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       <div 
-        className={`md:hidden absolute w-full bg-white shadow-md transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute w-full bg-gray-900 shadow-md transition-all duration-300 ease-in-out ${
           mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 invisible'
         } overflow-hidden`}
       >
@@ -79,12 +71,12 @@ export default function Header() {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={e => handleNavClick(e, item.toLowerCase())}
-                className="px-4 py-3 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors"
+                className="px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
               >
                 {item}
               </a>
             ))}
-            <div className="pt-2 mt-2 border-t border-gray-100">
+            <div className="pt-2 mt-2 border-t border-gray-800">
               <a 
                 href="/resume.pdf" 
                 className="block w-full text-center px-4 py-3 bg-primary hover:bg-secondary text-white font-medium rounded-md transition-colors"

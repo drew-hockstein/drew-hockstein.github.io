@@ -2,7 +2,7 @@ import profileImg from '../assets/icons/profile.jpg';
 
 export default function About() {
   return (
-    <section id="about" className="min-h-screen flex items-center bg-gradient-to-b from-white to-gray-50 pt-20">
+    <section id="about" className="min-h-screen flex items-center bg-gradient-to-b from-gray-50 to-white pt-20">
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -27,7 +27,7 @@ export default function About() {
                   href="https://github.com/drew-hockstein" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-700 hover:text-primary transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                   aria-label="GitHub Profile"
                 >
                   GitHub
@@ -36,14 +36,14 @@ export default function About() {
                   href="https://linkedin.com/in/drew-hockstein" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-700 hover:text-primary transition-colors"
+                  className="text-gray-600 hover:text-primary transition-colors"
                   aria-label="LinkedIn Profile"
                 >
                   LinkedIn
                 </a>
                 <a 
-                  href="/resume.pdf" 
-                  className="px-5 py-2 bg-primary hover:bg-secondary text-white font-medium text-sm rounded-md transition-colors shadow-sm inline-flex items-center gap-2"
+                  href="/Drew_Hockstein_Resume.pdf" 
+                  className="px-5 py-2 bg-gray-900 hover:bg-gray-800 text-white font-medium text-sm rounded-md transition-colors shadow-sm inline-flex items-center gap-2 border border-gray-700"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
