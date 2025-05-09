@@ -1,4 +1,4 @@
-import profileImg from '../assets/icons/profile.jpeg';
+import profileImg from '../assets/icons/profile.jpg';
 
 export default function About() {
   return (
