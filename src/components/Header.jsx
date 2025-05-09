@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900 shadow-sm py-3' : 'bg-gray-900 py-5'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 bg-gray-900 ${scrolled ? 'py-3' : 'py-5'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center">
           <span className="text-2xl font-bold text-white">Home</span>
