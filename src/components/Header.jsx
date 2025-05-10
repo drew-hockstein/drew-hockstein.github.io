@@ -78,7 +78,7 @@ export default function Header() {
             ))}
             <div className="pt-2 mt-2 border-t border-gray-800">
               <a 
-                href="/resume.pdf" 
+                href="/Drew_Hockstein_Resume.pdf" 
                 className="block w-full text-center px-4 py-3 bg-primary hover:bg-secondary text-white font-medium rounded-md transition-colors"
                 target="_blank" 
                 rel="noopener noreferrer"
