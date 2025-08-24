@@ -1,24 +1,41 @@
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: 'Frontend',
       icon: null,
-      skills: ["React", "TypeScript", "Angular", "HTML5", "CSS3", "Tailwind CSS"]
+      skills: [
+        'React',
+        'TypeScript',
+        'Angular',
+        'HTML5',
+        'CSS3',
+        'Tailwind CSS',
+      ],
     },
     {
-      title: "Backend",
+      title: 'Backend',
       icon: null,
-      skills: ["Node.js", "Python", "SQL", "PostgreSQL", "REST APIs", "GraphQL"]
+      skills: [
+        'Node.js',
+        'Python',
+        'SQL',
+        'PostgreSQL',
+        'REST APIs',
+        'GraphQL',
+      ],
     },
     {
-      title: "Tools & DevOps",
+      title: 'Tools & DevOps',
       icon: null,
-      skills: ["Git", "GitHub", "Docker", "AWS", "CI/CD", "Jest"]
-    }
+      skills: ['Git', 'GitHub', 'Docker', 'AWS', 'CI/CD', 'Jest'],
+    },
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section
+      id="skills"
+      className="py-24 bg-gradient-to-b from-gray-50 to-white"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <div className="inline-block mb-2 text-sm font-medium text-primary px-3 py-1 bg-primary/10 rounded-full">
@@ -26,14 +43,15 @@ export default function Skills() {
           </div>
           <h2 className="text-4xl font-bold mb-6">Skills & Technologies</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            I specialize in modern web technologies, focusing on building scalable and maintainable solutions.
+            I specialize in modern web technologies, focusing on building
+            scalable and maintainable solutions.
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {skillCategories.map((category, index) => (
-            <div 
-              key={category.title} 
+            <div
+              key={category.title}
               className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -46,9 +64,7 @@ export default function Skills() {
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <div key={skill} className="group relative">
-                    <span
-                      className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300"
-                    >
+                    <span className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300">
                       {skill}
                     </span>
                   </div>
@@ -57,7 +73,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
-        
+
         <div className="mt-16 text-center">
           <p className="text-gray-600 mb-6">
             Always learning and expanding my toolkit with new technologies.

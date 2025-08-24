@@ -26,61 +26,92 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 bg-gray-900 ${scrolled ? 'py-3' : 'py-5'}`}>
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 bg-gray-900 ${scrolled ? 'py-3' : 'py-5'}`}
+    >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center">
           <span className="text-2xl font-bold text-white">Home</span>
         </a>
-        
+
         <nav className="hidden md:flex items-center space-x-1">
-          {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={e => handleNavClick(e, item.toLowerCase())}
-              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
-            >
-              {item}
-            </a>
-          ))}
+          {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map(
+            (item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={(e) => handleNavClick(e, item.toLowerCase())}
+                className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
+              >
+                {item}
+              </a>
+            )
+          )}
         </nav>
 
-        <button onClick={toggleMobileMenu} className="md:hidden text-gray-300 hover:text-white focus:outline-none">
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+        >
           {mobileMenuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           )}
         </button>
       </div>
 
       {/* Mobile menu */}
-      <div 
+      <div
         className={`md:hidden absolute w-full bg-gray-900 shadow-md transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 invisible'
+          mobileMenuOpen
+            ? 'max-h-96 opacity-100'
+            : 'max-h-0 opacity-0 invisible'
         } overflow-hidden`}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-2">
-            {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={e => handleNavClick(e, item.toLowerCase())}
-                className="px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
-              >
-                {item}
-              </a>
-            ))}
+            {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map(
+              (item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={(e) => handleNavClick(e, item.toLowerCase())}
+                  className="px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
+                >
+                  {item}
+                </a>
+              )
+            )}
             <div className="pt-2 mt-2 border-t border-gray-800">
-              <a 
-                href="/Drew_Hockstein_Resume.pdf" 
+              <a
+                href="/Drew_Hockstein_Resume.pdf"
                 className="block w-full text-center px-4 py-3 bg-primary hover:bg-secondary text-white font-medium rounded-md transition-colors"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
               >
