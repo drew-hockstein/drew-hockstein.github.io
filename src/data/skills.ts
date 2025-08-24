@@ -1,4 +1,4 @@
-export const skillCategories = [
+export const skillCategories: { title: string; icon: null; skills: string[] }[] = [
   {
     title: 'Frontend',
     icon: null,

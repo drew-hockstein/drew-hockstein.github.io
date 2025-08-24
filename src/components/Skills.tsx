@@ -1,6 +1,7 @@
 import { skillCategories } from '../data/skills';
+import type { ReactElement } from 'react';
 
-export default function Skills() {
+export default function Skills(): ReactElement {
   return (
     <section
       id="skills"
@@ -19,29 +20,34 @@ export default function Skills() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <div
-              key={category.title}
-              className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-center mb-6">
-                <div className="p-2 bg-primary/10 rounded-lg text-primary mr-4">
-                  {/* Removed icon */}
-                </div>
-                <h3 className="text-xl font-semibold">{category.title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <div key={skill} className="group relative">
-                    <span className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300">
-                      {skill}
-                    </span>
+          {skillCategories.map(
+            (
+              category: { title: string; icon: null; skills: string[] },
+              index: number
+            ) => (
+              <div
+                key={category.title}
+                className="bg-white rounded-xl shadow-md p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-center mb-6">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary mr-4">
+                    {/* Removed icon */}
                   </div>
-                ))}
+                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill: string) => (
+                    <div key={skill} className="group relative">
+                      <span className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300">
+                        {skill}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
 
         <div className="mt-16 text-center">

@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 
 const experiences: {
+  id: string;
   title: string;
   company: string;
   location: string;

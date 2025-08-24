@@ -7,6 +7,7 @@ import WorkExperience from './components/WorkExperience';
 import GitHubIcon from './components/icons/GitHubIcon';
 import LinkedInIcon from './components/icons/LinkedInIcon';
 import navLinks from './config/navLinks';
+import type { ReactElement } from 'react';
 
 export default function App(): ReactElement {
   return (
@@ -60,7 +61,7 @@ export default function App(): ReactElement {
                 reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
-                {navLinks.map(({ id, label }) => (
+                {navLinks.map(({ id, label }: { id: string; label: string }) => (
                   <a
                     key={id}
                     href={`#${id}`}

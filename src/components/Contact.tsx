@@ -1,6 +1,15 @@
-import { contactInfo } from '../data/contactInfo';
 
-const icons = {
+import { contactInfo } from '../data/contactInfo';
+import type { ReactElement } from 'react';
+
+type ContactInfo = {
+  title: string;
+  value: string;
+  icon: 'email' | 'github' | 'linkedin';
+  link: string;
+};
+
+const icons: Record<'email' | 'github' | 'linkedin', ReactElement> = {
   email: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -53,14 +62,13 @@ export default function Contact() {
           </div>
           <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            I'm always open to discussing new projects, opportunities, and
-            collaborations.
+            I'm always open to discussing new projects, opportunities, and collaborations.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-3 gap-6">
-            {contactInfo.map((info) => (
+            {contactInfo.map((info: ContactInfo) => (
               <a
                 key={info.title}
                 href={info.link}
@@ -89,8 +97,7 @@ export default function Contact() {
                   Let's Work Together
                 </h3>
                 <p className="text-gray-600 max-w-xl mx-auto">
-                  Have a project in mind? Looking for a passionate developer to
-                  join your team? I'd love to hear from you.
+                  Have a project in mind? Looking for a passionate developer to join your team? I'd love to hear from you.
                 </p>
               </div>
 

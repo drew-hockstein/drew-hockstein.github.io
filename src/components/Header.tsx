@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactElement, type MouseEvent } from 'react';
 import navLinks from '../config/navLinks';
 
 export default function Header(): ReactElement {
@@ -18,7 +18,7 @@ export default function Header(): ReactElement {
   };
 
   const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
+    e: MouseEvent<HTMLAnchorElement>,
     id: string
   ): void => {
     e.preventDefault();
@@ -39,7 +39,7 @@ export default function Header(): ReactElement {
         </a>
 
         <nav className="hidden md:flex items-center space-x-1">
-          {navLinks.map(({ id, label }) => (
+          {navLinks.map(({ id, label }: { id: string; label: string }) => (
             <a
               key={id}
               href={`#${id}`}
@@ -97,7 +97,7 @@ export default function Header(): ReactElement {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-2">
-            {navLinks.map(({ id, label }) => (
+            {navLinks.map(({ id, label }: { id: string; label: string }) => (
               <a
                 key={id}
                 href={`#${id}`}

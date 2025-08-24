@@ -1,5 +1,8 @@
-/* eslint-disable react/prop-types */
-export default function LinkedInIcon({ className = 'w-6 h-6', ...props }) {
+type IconProps = {
+  className?: string;
+} & React.SVGProps<SVGSVGElement>;
+
+export default function LinkedInIcon({ className = 'w-6 h-6', ...props }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
