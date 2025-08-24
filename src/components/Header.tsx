@@ -1,4 +1,5 @@
-import React, { useState, useEffect, type ReactElement } from 'react';
+import { useState, useEffect } from 'react';
+import navLinks from '../config/navLinks';
 
 export default function Header(): ReactElement {
   const [scrolled, setScrolled] = useState<boolean>(false);
@@ -38,18 +39,16 @@ export default function Header(): ReactElement {
         </a>
 
         <nav className="hidden md:flex items-center space-x-1">
-          {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map(
-            (item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={(e) => handleNavClick(e, item.toLowerCase())}
-                className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
-              >
-                {item}
-              </a>
-            )
-          )}
+          {navLinks.map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => handleNavClick(e, id)}
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
+            >
+              {label}
+            </a>
+          ))}
         </nav>
 
         <button
@@ -98,18 +97,16 @@ export default function Header(): ReactElement {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-2">
-            {['About', 'Experience', 'Skills', 'Projects', 'Contact'].map(
-              (item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={(e) => handleNavClick(e, item.toLowerCase())}
-                  className="px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
-                >
-                  {item}
-                </a>
-              )
-            )}
+            {navLinks.map(({ id, label }) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                onClick={(e) => handleNavClick(e, id)}
+                className="px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
+              >
+                {label}
+              </a>
+            ))}
             <div className="pt-2 mt-2 border-t border-gray-800">
               <a
                 href="/Drew_Hockstein_Resume.pdf"

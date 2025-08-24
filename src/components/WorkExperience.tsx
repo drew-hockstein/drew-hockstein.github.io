@@ -8,6 +8,7 @@ const experiences: {
   bullets: string[];
 }[] = [
   {
+    id: 'software-developer',
     title: 'Software Developer',
     company: 'Lumen Technologies',
     location: 'Remote (Based in Denver, CO)',
@@ -19,6 +20,7 @@ const experiences: {
     ],
   },
   {
+    id: 'analyst-intern',
     title: 'Analyst Intern',
     company: 'Lumen Technologies',
     location: 'Broomfield, CO (Hybrid)',
@@ -31,6 +33,7 @@ const experiences: {
     ],
   },
   {
+    id: 'computer-technician',
     title: 'Computer Technician',
     company: 'TIG',
     location: 'Louisville, CO',
@@ -42,6 +45,7 @@ const experiences: {
     ],
   },
   {
+    id: 'course-assistant',
     title: 'Course Assistant',
     company: 'University of Colorado Boulder',
     location: 'Boulder, CO (Hybrid)',
@@ -70,9 +74,9 @@ export default function WorkExperience(): ReactElement {
           </h2>
         </div>
         <div className="max-w-3xl mx-auto space-y-10">
-          {experiences.map((exp, idx) => (
+          {experiences.map((exp) => (
             <div
-              key={idx}
+              key={exp.id}
               className="bg-white rounded-xl shadow-md p-8 border border-gray-200 hover:border-gray-300 transition-colors"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">

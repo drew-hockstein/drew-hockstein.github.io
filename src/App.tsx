@@ -1,11 +1,12 @@
-import type { ReactElement } from 'react';
-import './App.css';
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
+import GitHubIcon from './components/icons/GitHubIcon';
+import LinkedInIcon from './components/icons/LinkedInIcon';
+import navLinks from './config/navLinks';
 
 export default function App(): ReactElement {
   return (
@@ -36,17 +37,19 @@ export default function App(): ReactElement {
                   href="https://github.com/drew-hockstein"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  <span className="sr-only">GitHub</span>
+                  <GitHubIcon className="w-6 h-6" />
                 </a>
                 <a
                   href="https://linkedin.com/in/drew-hockstein"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  <span className="sr-only">LinkedIn</span>
+                  <LinkedInIcon className="w-6 h-6" />
                 </a>
               </div>
             </div>
@@ -57,36 +60,15 @@ export default function App(): ReactElement {
                 reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
-                <a
-                  href="#about"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="#experience"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Experience
-                </a>
-                <a
-                  href="#skills"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Skills
-                </a>
-                <a
-                  href="#projects"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#contact"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Contact
-                </a>
+                {navLinks.map(({ id, label }) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                  >
+                    {label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
