@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { GITHUB_URL, LINKEDIN_URL } from '../config/links';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,6 +48,22 @@ export default function Header() {
               </a>
             )
           )}
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
+          >
+            GitHub
+          </a>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-300"
+          >
+            LinkedIn
+          </a>
         </nav>
 
         <button
@@ -107,7 +124,25 @@ export default function Header() {
                 </a>
               )
             )}
-            <div className="pt-2 mt-2 border-t border-gray-800">
+            <div className="pt-2 mt-2 border-t border-gray-800 flex flex-col space-y-2">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                GitHub
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                LinkedIn
+              </a>
               <a
                 href="/Drew_Hockstein_Resume.pdf"
                 className="block w-full text-center px-4 py-3 bg-primary hover:bg-secondary text-white font-medium rounded-md transition-colors"

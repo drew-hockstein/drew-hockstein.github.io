@@ -1,3 +1,5 @@
+import { GITHUB_URL, LINKEDIN_URL } from '../config/links';
+
 export default function About() {
   return (
     <section
@@ -34,7 +36,7 @@ export default function About() {
 
               <div className="mt-8 flex items-center space-x-6">
                 <a
-                  href="https://github.com/drew-hockstein"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary transition-colors"
@@ -43,7 +45,7 @@ export default function About() {
                   GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/in/drew-hockstein"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary transition-colors"

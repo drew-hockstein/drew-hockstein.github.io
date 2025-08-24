@@ -5,6 +5,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
+import { GITHUB_URL, LINKEDIN_URL } from './config/links';
 
 export default function App() {
   return (
@@ -32,7 +33,7 @@ export default function App() {
 
               <div className="flex space-x-6 mb-6 md:mb-0">
                 <a
-                  href="https://github.com/drew-hockstein"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -40,7 +41,7 @@ export default function App() {
                   <span className="sr-only">GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/drew-hockstein"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"

@@ -1,3 +1,5 @@
+import { GITHUB_URL } from '../config/links';
+
 export default function Projects() {
   return (
     <section
@@ -31,7 +33,7 @@ export default function Projects() {
           </p>
           <div className="flex justify-center">
             <a
-              href="https://github.com/drew-hockstein"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded-lg font-medium transition-colors"
