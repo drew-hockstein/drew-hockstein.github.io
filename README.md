@@ -1,6 +1,17 @@
 # drew-hockstein.github.io
 
 ## Project Overview
+
+This repository contains the source code for Drew Hockstein's personal resume website. It is built with React, Vite, and
+Tailwind CSS and published via GitHub Pages.
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) and npm
+
+## Development Scripts
+
+=======
 This repository contains the source code for Drew Hockstein's personal resume website. It is built with React, Vite, and Tailwind CSS and published via GitHub Pages.
 
 ## Prerequisites

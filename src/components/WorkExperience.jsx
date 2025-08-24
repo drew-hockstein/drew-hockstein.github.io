@@ -50,24 +50,36 @@ const experiences = [
 
 export default function WorkExperience() {
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section
+      id="experience"
+      className="py-24 bg-gradient-to-b from-white to-gray-50"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <div className="inline-block mb-2 text-sm font-medium text-primary px-3 py-1 bg-primary/10 rounded-full">
             Work Experience
           </div>
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">Professional Experience</h2>
+          <h2 className="text-4xl font-bold mb-6 text-gray-900">
+            Professional Experience
+          </h2>
         </div>
         <div className="max-w-3xl mx-auto space-y-10">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-md p-8 border border-gray-200 hover:border-gray-300 transition-colors">
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-md p-8 border border-gray-200 hover:border-gray-300 transition-colors"
+            >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900">{exp.title}</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900">
+                    {exp.title}
+                  </h3>
                   <div className="text-primary font-medium">{exp.company}</div>
                   <div className="text-gray-600 text-sm">{exp.location}</div>
                 </div>
-                <div className="text-gray-500 text-sm mt-2 md:mt-0 md:text-right">{exp.date}</div>
+                <div className="text-gray-500 text-sm mt-2 md:mt-0 md:text-right">
+                  {exp.date}
+                </div>
               </div>
               <ul className="list-disc pl-5 space-y-2 text-gray-600 mt-4">
                 {exp.bullets.map((bullet, i) => (
@@ -80,4 +92,4 @@ export default function WorkExperience() {
       </div>
     </section>
   );
-} 
+}
