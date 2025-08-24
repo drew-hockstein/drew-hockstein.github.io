@@ -1,5 +1,11 @@
-export default function Skills() {
-  const skillCategories = [
+import type { ReactElement } from 'react';
+
+export default function Skills(): ReactElement {
+  const skillCategories: {
+    title: string;
+    icon: ReactElement | null;
+    skills: string[];
+  }[] = [
     {
       title: 'Frontend',
       icon: null,

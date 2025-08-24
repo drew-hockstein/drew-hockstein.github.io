@@ -1,6 +1,12 @@
-import React from 'react';
+import type { ReactElement } from 'react';
 
-const experiences = [
+const experiences: {
+  title: string;
+  company: string;
+  location: string;
+  date: string;
+  bullets: string[];
+}[] = [
   {
     title: 'Software Developer',
     company: 'Lumen Technologies',
@@ -48,7 +54,7 @@ const experiences = [
   },
 ];
 
-export default function WorkExperience() {
+export default function WorkExperience(): ReactElement {
   return (
     <section
       id="experience"

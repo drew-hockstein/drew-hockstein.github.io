@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import './App.css';
 import Header from './components/Header';
 import About from './components/About';
@@ -6,7 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
 
-export default function App() {
+export default function App(): ReactElement {
   return (
     <div className="min-h-screen bg-white">
       <Header />

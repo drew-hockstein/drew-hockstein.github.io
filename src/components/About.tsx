@@ -1,4 +1,6 @@
-export default function About() {
+import type { ReactElement } from 'react';
+
+export default function About(): ReactElement {
   return (
     <section
       id="about"

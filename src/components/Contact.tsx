@@ -1,5 +1,12 @@
-export default function Contact() {
-  const contactInfo = [
+import type { ReactElement } from 'react';
+
+export default function Contact(): ReactElement {
+  const contactInfo: {
+    title: string;
+    value: string;
+    icon: ReactElement;
+    link: string;
+  }[] = [
     {
       title: 'Email',
       value: 'drewhockstein@gmail.com',
