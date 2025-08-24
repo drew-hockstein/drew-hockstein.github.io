@@ -5,6 +5,8 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
+import GitHubIcon from './components/icons/GitHubIcon';
+import LinkedInIcon from './components/icons/LinkedInIcon';
 import navLinks from './config/navLinks';
 
 export default function App() {
@@ -36,17 +38,19 @@ export default function App() {
                   href="https://github.com/drew-hockstein"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  <span className="sr-only">GitHub</span>
+                  <GitHubIcon className="w-6 h-6" />
                 </a>
                 <a
                   href="https://linkedin.com/in/drew-hockstein"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  <span className="sr-only">LinkedIn</span>
+                  <LinkedInIcon className="w-6 h-6" />
                 </a>
               </div>
             </div>
