@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import WorkExperience from './components/WorkExperience';
 import GitHubIcon from './components/icons/GitHubIcon';
 import LinkedInIcon from './components/icons/LinkedInIcon';
+import navLinks from './config/navLinks';
 
 export default function App() {
   return (
@@ -60,36 +61,15 @@ export default function App() {
                 reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
-                <a
-                  href="#about"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  About
-                </a>
-                <a
-                  href="#experience"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Experience
-                </a>
-                <a
-                  href="#skills"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Skills
-                </a>
-                <a
-                  href="#projects"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Projects
-                </a>
-                <a
-                  href="#contact"
-                  className="text-gray-400 hover:text-white text-sm transition-colors"
-                >
-                  Contact
-                </a>
+                {navLinks.map(({ id, label }) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    className="text-gray-400 hover:text-white text-sm transition-colors"
+                  >
+                    {label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
